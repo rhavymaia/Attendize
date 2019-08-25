@@ -26,7 +26,7 @@ Demo Back-end Demo: http://attendize.website/signup<br />
  - Data export - attendees list to XLS, CSV etc.
  - Generate print friendly attendee list
  - Ability to manage unlimited organisers / events
- - Manage multiple organisers 
+ - Manage multiple organisers
  - Real-time event statistics
  - Customizable event pages
  - Multiple currency support
@@ -36,7 +36,7 @@ Demo Back-end Demo: http://attendize.website/signup<br />
  - Affiliate tracking
     - track sales volume / number of visits generated etc.
  - Widget support - embed ticket selling widget into existing websites / WordPress blogs
- - Social sharing 
+ - Social sharing
  - Support multiple payment gateways - Stripe, PayPal & Coinbase so far, with more being added
  - Support for offline payments
  - Refund payments - partial refund & full refunds
@@ -66,14 +66,14 @@ To do a manual installation use the [Manual Installation Steps](http://www.atten
 
 ### Troubleshooting
 ---
-If you are having problems please read the [troubleshooting guide](http://www.attendize.com/troubleshooting.html) 
+If you are having problems please read the [troubleshooting guide](http://www.attendize.com/troubleshooting.html)
 
 License
 ---
 
 Attendize is open-sourced software licensed under the Attribution Assurance License. See [http://www.attendize.com/license.html](http://www.attendize.com/license.html) for further details. We also have white-label licence options available.
 
-Contributors 
+Contributors
 ---
 * Jeremy Quinton ([Github](https://github.com/jeremyquinton))
 * Sam Bell ([Github](https://github.com/samdb))
@@ -84,3 +84,43 @@ Contributors
 * James Campbell ([Github](https://github.com/jncampbell))
 * JapSeyz ([Github](https://github.com/JapSeyz))
 * Mark Walet ([Github](https://github.com/markwalet))
+
+<h1>Configuração de ambiente</h1>
+Instalando dependência do PHP 7.3:
+	- https://tecadmin.net/install-php-debian-9-stretch/ ou https://computingforgeeks.com/how-to-install-php-7-3-on-debian-9-debian-8/
+
+	Verificar os pacotes instalados:
+		$ apt-cache search php7.3
+			- sudo apt-get install php-mbstring
+			- sudo apt-get install php7.0-gd
+			- sudo apt-get install php7.0-intl
+			- sudo apt-get install php7.0-xsl
+			- sudo apt-get install php-curl
+
+Instalando Apache2, PHP7.0 e Mysql (Passos 1 até 4):
+	- https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-16-04-pt
+
+Configurando url mod_rewrite (Passos 1 e 2):
+	- https://www.digitalocean.com/community/tutorials/how-to-rewrite-urls-with-mod_rewrite-for-apache-on-ubuntu-16-04
+
+Configuração do Mysql somente no Debian:
+	- https://www.digitalocean.com/community/tutorials/how-to-install-the-latest-mysql-on-debian-9
+
+Instalar o cURL no Debian ou Ubuntu:
+	- sudo apt-get update
+	- sudo apt-get install curl
+
+Instalando Composer (Passo 1 e 2):
+	https://tecadmin.net/install-php-composer-debian/
+
+Instalar o zip para o Debian ou Ubuntu:
+	- apt-get install zip unzip php7.0-zip
+
+Instalar o WkhtmltoPDF para o Debian ou Ubuntu:
+	- apt-get install wkhtmltopdf
+
+Instalando o Git:
+	- https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-16-04
+
+Instalando o Attendize:
+	- https://freedif.org/attendize-sell-your-ticket-and-manage-your-event
