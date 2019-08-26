@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'Access Codes',
+    'title' => 'Código de Acesso',
     'success_message' => 'Successfully Created Access Code',
     'delete_message' => 'Successfully Removed Access Code',
     'cannot_delete_used_code' => 'Cannot Delete a Used Code',
