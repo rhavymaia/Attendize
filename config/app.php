@@ -66,7 +66,7 @@ return [
     */
 
     //'locale' => 'en',
-    'locale' => 'pt-br',
+    'locale' => 'pt-BR',
 
 
     /*
@@ -81,7 +81,7 @@ return [
     */
 
     //'fallback_locale' => 'en',
-    'fallback_locale' => 'pt-br',
+    'fallback_locale' => 'pt-BR',
     /*
     |--------------------------------------------------------------------------
     | Encryption Key
