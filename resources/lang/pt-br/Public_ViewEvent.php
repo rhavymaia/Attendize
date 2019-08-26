@@ -13,7 +13,7 @@ return [
   'attendee_cancelled' => 'Cancelled',
   'below_order_details_header' => '',
   'below_payment_information_header' => '',
-  'below_tickets' => 'Choose the number of tickets and click "register". On the next screen you\'ll pay for them.',
+  'below_tickets' => 'Escolha o número de Ingressos e clique em "Registrar". Na próxima página você informará os dados do cadastro.',
   'booking_fee' => 'Booking Fee',
   'booking_fees' => 'Booking Fees',
   'is_business' => 'Are you a tax registered business?',
