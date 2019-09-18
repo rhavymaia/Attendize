@@ -397,7 +397,11 @@ class EventAttendeesController extends MyBaseController
     public function showPrintAttendees($event_id)
     {
         $data['event'] = Event::scope()->find($event_id);
-        $data['attendees'] = $data['event']->attendees()->withoutCancelled()->orderBy('first_name')->get();
+        $data['attendees'] = $data['event']
+          ->attendees()
+          ->withoutCancelled()
+          ->orderBy('tickets.title', 'first_name')
+          ->get();
 
         return view('ManageEvent.PrintAttendees', $data);
     }
@@ -886,5 +890,3 @@ class EventAttendeesController extends MyBaseController
     }
 
 }
-
-

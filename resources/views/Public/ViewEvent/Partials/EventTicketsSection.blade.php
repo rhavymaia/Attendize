@@ -25,9 +25,9 @@
                                 @foreach($tickets->where('is_hidden', false) as $ticket)
                                     <tr class="ticket" property="offers" typeof="Offer">
                                         <td>
-                                <span class="ticket-title semibold" property="name">
-                                    {{$ticket->title}}
-                                </span>
+                                            <span class="ticket-title semibold" property="name">
+                                                {{$ticket->title}}
+                                            </span>
                                             <p class="ticket-descripton mb0 text-muted" property="description">
                                                 {{$ticket->description}}
                                             </p>

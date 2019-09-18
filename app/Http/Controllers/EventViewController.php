@@ -32,9 +32,10 @@ class EventViewController extends Controller
             return view('Public.ViewEvent.EventNotLivePage');
         }
 
+        /* Ordenar pelo nome do ticket. */
         $data = [
             'event' => $event,
-            'tickets' => $event->tickets()->orderBy('sort_order', 'asc')->get(),
+            'tickets' => $event->tickets()->orderBy('title', 'asc')->get(),
             'is_embedded' => 0,
         ];
         /*

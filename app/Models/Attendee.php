@@ -105,6 +105,8 @@ class Attendee extends MyBaseModel
     public function scopeWithoutCancelled($query)
     {
         return $query->where('attendees.is_cancelled', '=', 0);
+        /*return $query::join('tickets', 'tickets.id', '=', 'attendees.ticket_id')
+          ->where('attendees.is_cancelled', '=', 0);*/
     }
 
     /**

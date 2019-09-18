@@ -1,24 +1,24 @@
 @extends('en.Emails.Layouts.Master')
 
 @section('message_content')
-Hello,<br><br>
+Olá,<br><br>
 
-Your order for the event <strong>{{$order->event->title}}</strong> was successful.<br><br>
+Seu pedido para o evento <strong>{{$order->event->title}}</strong> foi realizado com sucesso.<br><br>
 
-Your tickets are attached to this email. You can also view you order details and download your tickets
-at: {{route('showOrderDetails', ['order_reference' => $order->order_reference])}}
+Seus ingresso(s) está(ão) anexados ao e-mail. Você poderá ver os detalhes do seu pedido e fazer o download dos seu(s) ingresso(s)
+em: {{route('showOrderDetails', ['order_reference' => $order->order_reference])}}
 
 @if(!$order->is_payment_received)
 <br><br>
-<strong>Please note: This order still requires payment. Instructions on how to make payment can be found on your
-    order page: {{route('showOrderDetails', ['order_reference' => $order->order_reference])}}</strong>
+<strong>Observação: este pedido ainda requer pagamento. Instruções sobre como efetuar o pagamento podem ser encontradas na
+  página do Pedido: {{route('showOrderDetails', ['order_reference' => $order->order_reference])}}</strong>
 <br><br>
 @endif
-<h3>Order Details</h3>
-Order Reference: <strong>{{$order->order_reference}}</strong><br>
-Order Name: <strong>{{$order->full_name}}</strong><br>
-Order Date: <strong>{{$order->created_at->format(config('attendize.default_datetime_format'))}}</strong><br>
-Order Email: <strong>{{$order->email}}</strong><br>
+<h3>Detalhes do Pedido</h3>
+Referência: <strong>{{$order->order_reference}}</strong><br>
+Nome: <strong>{{$order->full_name}}</strong><br>
+Data: <strong>{{$order->created_at->format(config('attendize.default_datetime_format'))}}</strong><br>
+E-mail: <strong>{{$order->email}}</strong><br>
 <a href="{!! route('downloadCalendarIcs', ['event_id' => $order->event->id]) !!}">Add To Calendar</a>
 
 @if ($order->is_business)
@@ -37,16 +37,16 @@ Order Email: <strong>{{$order->email}}</strong><br>
     <table style="width:100%; margin:10px;">
         <tr>
             <td>
-                <strong>Ticket</strong>
+                <strong>Ingresso</strong>
             </td>
             <td>
-                <strong>Qty.</strong>
+                <strong>Qtd.</strong>
             </td>
             <td>
-                <strong>Price</strong>
+                <strong>Preço</strong>
             </td>
             <td>
-                <strong>Fee</strong>
+                <strong>Taxa</strong>
             </td>
             <td>
                 <strong>Total</strong>
@@ -109,5 +109,5 @@ Order Email: <strong>{{$order->email}}</strong><br>
     <br><br>
 </div>
 <br><br>
-Thank you
+Obrigado!
 @stop
