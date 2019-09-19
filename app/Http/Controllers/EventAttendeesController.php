@@ -243,6 +243,7 @@ class EventAttendeesController extends MyBaseController
      */
     public function showImportAttendee(Request $request, $event_id)
     {
+        Log::info("********* showImportAttendee  ************");
         $event = Event::scope()->find($event_id);
 
         /*
