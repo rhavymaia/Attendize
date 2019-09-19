@@ -262,13 +262,14 @@ class EventAttendeesController extends MyBaseController
 
     /**
      * Import attendees
-     *
+     *  Importação dos participantes.
      * @param Request $request
      * @param $event_id
      * @return mixed
      */
     public function postImportAttendee(Request $request, $event_id)
     {
+        Log::info("********* postImportAttendee  ************");
         $rules = [
             'ticket_id'      => 'required|exists:tickets,id,account_id,' . \Auth::user()->account_id,
             'attendees_list' => 'required|mimes:csv,txt|max:5000|',
@@ -278,6 +279,7 @@ class EventAttendeesController extends MyBaseController
             'ticket_id.exists' => trans("Controllers.ticket_not_exists_error"),
         ];
 
+        Log::info("********* Inicio validacao  ************");
         $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return response()->json([
@@ -287,6 +289,8 @@ class EventAttendeesController extends MyBaseController
 
         }
 
+        Log::info("********* fim validacao  ************");
+
         $ticket_id = $request->get('ticket_id');
         $event = Event::findOrFail($event_id);
         $ticket_price = 0;
@@ -294,9 +298,10 @@ class EventAttendeesController extends MyBaseController
         $num_added = 0;
         if ($request->file('attendees_list')) {
 
+            Log::info("********* arquivo  ************");
             $the_file = Excel::load($request->file('attendees_list')->getRealPath(), function ($reader) {
             })->get();
-
+            Log::info("********* arquivo carregado  ************");
             // Loop through
             foreach ($the_file as $rows) {
                 if (!empty($rows['first_name']) && !empty($rows['last_name']) && !empty($rows['email'])) {
@@ -400,7 +405,7 @@ class EventAttendeesController extends MyBaseController
         $data['attendees'] = $data['event']
           ->attendees()
           ->withoutCancelled()
-          ->orderBy('tickets.title', 'first_name')
+          ->orderBy('first_name')
           ->get();
 
         return view('ManageEvent.PrintAttendees', $data);
